@@ -112,20 +112,8 @@ ifneq ($(words $(BUILD_FINGERPRINT)),1)
 endif
 
 # Display parameters shown under Settings -> About Phone
-ifeq ($(TARGET_BUILD_VARIANT),user)
-  # User builds should show:
-  # release build number or branch.buld_number non-release builds
 
-  # Dev. branches should have DISPLAY_BUILD_NUMBER set
-  ifeq "true" "$(DISPLAY_BUILD_NUMBER)"
-    BUILD_DISPLAY_ID := $(BUILD_ID).$(BUILD_NUMBER) $(BUILD_KEYS)
-  else
-    BUILD_DISPLAY_ID := $(BUILD_ID) $(BUILD_KEYS)
-  endif
-else
-  # Non-user builds should show detailed build information
-  BUILD_DISPLAY_ID := $(build_desc)
-endif
+BUILD_DISPLAY_ID := $(BUILD_ID)
 
 # Whether there is default locale set in PRODUCT_PROPERTY_OVERRIDES
 product_property_override_locale_language := $(strip \
