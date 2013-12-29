@@ -19,3 +19,5 @@
 # capitalized by convention.
 
 export BUILD_ID=KOT49H
+
+export MOD_VERSION=PRE5.KKSSW1
