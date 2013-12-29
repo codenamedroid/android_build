@@ -56,3 +56,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/locales_full.mk)
 
 # Get everything else from the parent package
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_no_telephony.mk)
+
+# Codename Android System
+$(call inherit-product-if-exists, vendor/cna/configs/cna_system.mk)
+
+# AOSP Fixes
+$(call inherit-product-if-exists, vendor/cna/configs/aosp_fixes.mk)
